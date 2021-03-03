@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'webapp',
+    'slide',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -127,3 +129,10 @@ STATIC_URL = '/static/'
 #Media files
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+#ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    }
+}

@@ -18,11 +18,13 @@ from django.urls import path, include
 from django.conf import settings
 
 from webapp.urls import webapp_patterns
+from menu.urls import carta_patterns
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(webapp_patterns))
+    path('', include(webapp_patterns)),
+    path('carta/', include(carta_patterns))
 ]
 
 if settings.DEBUG:

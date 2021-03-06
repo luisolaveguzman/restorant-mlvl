@@ -6,6 +6,8 @@
     {% load static %}
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %} | Club Maleville</title>
+
 
 
     <!-- Site Icons -->
@@ -42,16 +44,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbars-rs-food">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active dropdown">
-                        <a class="nav-link dropdown-toggle" href="/" id="dropdown-a" data-toggle="dropdown">Home</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="#reservation">Reserva</a>
-                            <a class="dropdown-item" href="#galery">Galería</a>
-                            <a class="dropdown-item" href="#mision">Misión</a>
-                            <a class="dropdown-item" href="#vision">Visión</a>
-                            <a class="dropdown-item" href="#politicas">Políticas</a>
-                        </div>
-                    <li class="nav-item"><a class="nav-link" href="#">Carta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'webapp:home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'carta:carta' %}">Carta</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Menú</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Reserva</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
@@ -112,9 +106,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="company-name">All Rights Reserved. &copy; 2018 <a href="#">Live Dinner Restaurant</a>
-                        Design By :
-                        <a href="https://html.design/">html design</a></p>
+                    <p class="company-name">All Rights Reserved. &copy; 2021 <a href="#">Olave WebSystem</a>
                 </div>
             </div>
         </div>
@@ -123,8 +115,7 @@
 </footer>
 <!-- End Footer -->
 
-<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o"
-                                                                           aria-hidden="true"></i></a>
+<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
 
 <!-- ALL JS FILES -->
 <script src="{% static 'webapp/js/jquery-3.2.1.min.js' %}"></script>

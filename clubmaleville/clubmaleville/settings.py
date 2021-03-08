@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'menu',
     'slide',
     'ckeditor',
+    'menudiario',
 
 ]
 
@@ -81,7 +82,7 @@ WSGI_APPLICATION = 'clubmaleville.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'c_mlvl_db',
+        'NAME': 'club_m_db',
         'USER': 'postgres',
         'PASSWORD': 'admin',
         'HOST': 'localhost',

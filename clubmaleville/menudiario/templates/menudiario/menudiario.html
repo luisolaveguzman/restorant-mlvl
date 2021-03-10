@@ -1,0 +1,67 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+{% block title %} Menú {% endblock %}
+{% block content %}
+<!-- Start Menu -->
+
+<div class="qt-box qt-background" style="padding-top: 150px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto text-center">
+                <p class="lead" style="border-radius: 20px; background-color: #656260; opacity: 90%; padding:15px;">
+                    Menú, diariamente el más rico. <br>
+                </p>
+                <div class="text-left panel panel-default" style="padding-left:20px;  border-radius: 20px; background-color: #656260; opacity: 90%; padding:15px;">
+                    <div class="pl-3 panel-body">
+                        <p class="font-weight-bold text-center">Entradas</p>
+                        {% for entrada in entradas %}
+                        <div class="row font-weight-bold">
+                            <div class="col-9" style="color:white">
+                                <p>{{entrada.name}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="pl-3">
+                        <p class="font-weight-bold text-center">Fondos</p>
+                        {% for menu in menus %}
+                        <div class="row font-weight-bold">
+                            <div class="col-9" style="color:white">
+                                <p>{{menu.name}}</p>
+                            </div>
+                            <div class="col-3" style="color:white">
+                                <p>$ {{menu.price}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="pl-3">
+                        <p class="font-weight-bold text-center">Especialidades</p>
+                        {% for especial in especialidades %}
+                        <div class="row font-weight-bold">
+                            <div class="col-9" style="color:white">
+                                <p>{{especial.name}}</p>
+                            </div>
+                            <div class="col-3" style="color:white">
+                                <p>$ {{especial.price}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="pl-3 panel-body text-center">
+                        <p class="font-weight-bold text-center" >Acompañamientos</p>
+                        {% for acompanamiento in acompanamientos %}
+                        <span>{{acompanamiento.name}} {% if not forloop.last %}|{% endif %} </span>
+                        {% endfor %}
+                    </div>
+                    <b>+ Los mas ricos postres</b>
+                    {% for plato in menu %}
+                    {% endfor %}
+                </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

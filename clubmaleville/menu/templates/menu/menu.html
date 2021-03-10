@@ -1,0 +1,111 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+{% block title %} Carta {% endblock %}
+{% block content %}
+<!-- Start All Pages -->
+<div class="all-page-title page-breadcrumb">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Special Menu</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End All Pages -->
+
+<!-- Start Menu -->
+<div class="menu-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading-title text-center">
+                    <h2>Special Menu</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row inner-menu-box">
+            <!-- List Categorys -->
+            <div class="col-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    {% for category in categorys %}
+                    {{category.name}}
+                    <a class="nav-link" id="{{category.name}}-tab" data-toggle="pill" href="#v-pills-{{category.id}}"
+                       role="tab"
+                       aria-controls="v-pills-{{category.name}}" aria-selected="false">{{ category.name }}</a>
+                    {% endfor %}
+                </div>
+            </div>
+            <!-- End List Categorys -->
+
+            <div class="col-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel"
+                         aria-labelledby="v-pills-1-tab">
+                        <div class="row">
+                            {% for plat in plats %}
+                            {% if plat.category_id == 1 %}
+                            <div class="col-lg-4 col-md-6 special-grid drinks">
+                                <div class="gallery-single fix">
+                                    <h4 style="padding:2px;">{{plat.name}}</h4>
+                                    <img src="{% static 'webapp/images/img-01.jpg' %}" class="img-fluid" alt="Image">
+                                    <div class="why-text">
+                                        <p>{{ plat.description }}</p>
+                                        <h5> {{plat.price}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="tab-pane fade show active" id="v-pills-2" role="tabpanel"
+                         aria-labelledby="v-pills-2-tab">
+                        <div class="row">
+                            {% for plat in plats %}
+                            {% if plat.category_id == 2 %}
+                            <div class="col-lg-4 col-md-6 special-grid drinks">
+                                <div class="gallery-single fix">
+                                    <h4 style="padding:2px;">{{plat.name}}</h4>
+                                    <img src="{% static 'webapp/images/img-01.jpg' %}" class="img-fluid" alt="Image">
+                                    <div class="why-text">
+                                        <p>{{plat.description}}</p>
+                                        <h5> {{plat.price}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade show active" id="v-pills-3" role="tabpanel"
+                         aria-labelledby="v-pills-3-tab">
+                        <div class="row">
+                            {% for plat in plats %}
+                            {% if plat.category_id == 3 %}
+                            <div class="col-lg-4 col-md-6 special-grid drinks">
+                                <div class="gallery-single fix">
+                                    <h4 style="padding:2px;">{{plat.name}}</h4>
+                                    <img src="{% static 'webapp/images/img-01.jpg' %}" class="img-fluid" alt="Image">
+                                    <div class="why-text">
+                                        <p>{{plat.description}}</p>
+                                        <h5> {{plat.price}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Menu -->
+
+{% endblock %}

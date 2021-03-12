@@ -5,7 +5,6 @@ from django.views.generic import TemplateView
 
 from slide.models import Slide
 
-
 class Home(TemplateView):
     model = Slide
     template_name = "webapp/home.html"
@@ -17,3 +16,4 @@ class Home(TemplateView):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, self.get_context_data())
+

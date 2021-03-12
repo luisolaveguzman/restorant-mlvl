@@ -20,12 +20,14 @@ from django.conf import settings
 from webapp.urls import webapp_patterns
 from menu.urls import carta_patterns
 from menudiario.ursl import menudiario_patterns
+from reservas.urls import reservas_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(webapp_patterns)),
     path('carta/', include(carta_patterns)),
     path('menu/', include(menudiario_patterns)),
+    path('reservas/', include(reservas_patterns)),
 ]
 
 if settings.DEBUG:

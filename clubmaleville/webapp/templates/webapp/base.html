@@ -9,7 +9,6 @@
     <title>{% block title %}{% endblock %} | Club Maleville</title>
 
 
-
     <!-- Site Icons -->
     <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="apple-touch-icon" href="">
@@ -36,7 +35,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
             <a class="navbar-brand" href="home.html">
-                <img src="{% static 'webapp/images/logomalevillenegro.png' %}" style="height: 70px; width: 70px;" >
+                <img src="{% static 'webapp/images/logomalevillenegro.png' %}" style="height: 70px; width: 70px;">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbars-rs-food"
                     aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +46,7 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'webapp:home' %}">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'carta:carta' %}">Carta</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'menudiario:menu' %}">Menú</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Reserva</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'reservas:reservas' %}">Reserva</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
                 </ul>
             </div>
@@ -60,13 +59,14 @@
 
 <!-- Start Footer -->
 <footer class="footer-area bg-f">
-    <div class="container">
+    <div class="container justify-content-center">
         <div class="row">
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-6 col-md-6">
                 <h3>About Us</h3>
                 <p>Integer cursus scelerisque ipsum id efficitur. Donec a dui fringilla, gravida lorem ac, semper magna.
                     Aenean rhoncus ac lectus a interdum. Vivamus semper posuere dui.</p>
             </div>
+            <!--
             <div class="col-lg-3 col-md-6">
                 <h3>Subscribe</h3>
                 <div class="subscribe_form">
@@ -86,18 +86,20 @@
                     <li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
-            <div class="col-lg-3 col-md-6">
+
+            <div class="col-lg-4 col-md-6">
                 <h3>Contact information</h3>
                 <p class="lead">Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
                 <p class="lead"><a href="#">+01 2000 800 9999</a></p>
                 <p><a href="#"> info@admin.com</a></p>
             </div>
-            <div class="col-lg-3 col-md-6">
-                <h3>Opening hours</h3>
-                <p><span class="text-color">Monday: </span>Closed</p>
-                <p><span class="text-color">Tue-Wed :</span> 9:Am - 10PM</p>
+            -->
+            <div class="col-lg-6 col-md-6">
+                <h3>Horario de atención</h3>
+                <p><span class="text-color">Tue-Wed :</span> 12:PM - 10PM</p>
                 <p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
                 <p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p>
+                <p><span class="text-color">Domingo: </span>Cerrado</p>
             </div>
         </div>
     </div>
@@ -115,7 +117,8 @@
 </footer>
 <!-- End Footer -->
 
-<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></a>
+<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fa fa-paper-plane-o"
+                                                                           aria-hidden="true"></i></a>
 
 <!-- ALL JS FILES -->
 <script src="{% static 'webapp/js/jquery-3.2.1.min.js' %}"></script>

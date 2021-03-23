@@ -81,19 +81,5 @@
 		animation: 'fadeIn',
 		noScrollbars: true
 	});
-	
-	
-	
-	/* ..............................................
-    Datepicker
-    ................................................. */
-	
-	$('.datepicker').pickadate();
-	
-	$('.time').pickatime();
-	
-	
-	
-	
-	
+
 }(jQuery));

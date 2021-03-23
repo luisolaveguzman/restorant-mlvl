@@ -1,0 +1,74 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'webapp/css/custom.css' %}">
+{% block title %} Contacto {% endblock %}
+{% block content %}
+
+<!-- Start Contact info -->
+<div class="content" style="padding-top: 150px; padding-bottom: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading-title text-center">
+                    <h2>Contacto</h2>
+                    <p>El camino para el éxito es la constante superación</p>
+                    <p>Ayúdanos a llegar a la perfección con tus comentarios, criticas y también se aceptan
+                        felicitaciones</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <form id="" method="post">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{form.name}}
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                {{form.mail}}
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {{form.content}}
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="submit-button text-center">
+                                <button class="btn btn-common" id="submit" type="submit">Enviar Mensaje</button>
+                                <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="map-container-google-2" class="z-depth-1-half map-container-2 col-lg-6" style="overflow:hidden;
+                                                                                                    padding-bottom:56.25%;
+                                                                                                    position:relative;
+                                                                                                    height:0;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.7440146790263!2d-70.66328318480052!3d-33.455975180772334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c504f7567143%3A0x5ebd27c04298d4d6!2sVergara%20723%2C%20Santiago%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1615868002847!5m2!1ses!2scl"
+                        frameborder="0" style="border:0; left:0;
+                                                top:0;
+                                                height:60%;
+                                                width:100%;
+                                                position:absolute;" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+<!-- End Contact info -->
+
+<!--Google map-->
+
+
+<!--Google Maps-->
+
+{% endblock %}

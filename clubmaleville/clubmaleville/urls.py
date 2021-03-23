@@ -21,6 +21,7 @@ from webapp.urls import webapp_patterns
 from menu.urls import carta_patterns
 from menudiario.ursl import menudiario_patterns
 from reservas.urls import reservas_patterns
+from contact.urls import contact_patterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('carta/', include(carta_patterns)),
     path('menu/', include(menudiario_patterns)),
     path('reservas/', include(reservas_patterns)),
+    path('contacto/', include(contact_patterns)),
 ]
 
 if settings.DEBUG:

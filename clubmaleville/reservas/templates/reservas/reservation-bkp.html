@@ -1,0 +1,84 @@
+{% extends 'webapp/base.html' %}
+{% load static %}
+{% block title %} Reservación {% endblock %}
+{% block content %}
+<!-- Start Reservation -->
+
+<div class="reservation-box" style="padding-top:150px;">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="heading-title text-center">
+                <h2>Reservación</h2>
+                <p>Tienes una fecha especial que conmemorar, o simplemente reunirte con tus amigos?, reserva con
+                    nosotros</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <div class="contact-block">
+                    <form id="" method="POST">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Fecha</h3>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{form.date}}
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{form.hour}}
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{form.cant}}
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>Detales de contacto</h3>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            {{form.name}}
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            {{form.mail}}
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            {{form.phone}}
+                                            <div class="help-block with-errors"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="submit-button text-center">
+                                        <button type="submit" class="btn btn-common dashboard">Enviar Reserva</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- End Reservation -->
+
+{% endblock %}

@@ -47,7 +47,7 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'carta:carta' %}">Carta</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'menudiario:menu' %}">Menú</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'reservas:reservas' %}">Reserva</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contacto:contacto' %}">Contacto</a></li>
                 </ul>
             </div>
         </div>
@@ -57,36 +57,71 @@
 
 {% block content %}{% endblock %}
 
+<!-- Start Contact info -->
+<div class="contact-imfo-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 arrow-right">
+                <i class="fa fa-volume-control-phone"></i>
+                <div class="overflow-hidden">
+                    <h4>Teléfono</h4>
+                    <p class="lead">
+                        +56 2 2697908 |
+                        +56 9 44449441
+                    </p>
+                </div>
+            </div>
+            <!--
+            <div class="col-md-4 arrow-right">
+                <i class="fa fa-envelope"></i>
+                <div class="overflow-hidden">
+                    <h4>Correo</h4>
+                    <p class="lead">
+                        yourmail@gmail.com
+                    </p>
+                </div>
+            </div>
+            -->
+            <div class="col-md-6">
+                <i class="fa fa-map-marker"></i>
+                <div class="overflow-hidden">
+                    <h4>Dirección</h4>
+                    <p class="lead">
+                        Vergara #723, Santiago Centro
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Contact info -->
+
 <!-- Start Footer -->
 <footer class="footer-area bg-f">
     <div class="container justify-content-center">
         <div class="row">
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <h3>About Us</h3>
                 <p>Integer cursus scelerisque ipsum id efficitur. Donec a dui fringilla, gravida lorem ac, semper magna.
                     Aenean rhoncus ac lectus a interdum. Vivamus semper posuere dui.</p>
             </div>
-            <!--
-            <div class="col-lg-3 col-md-6">
-                <h3>Subscribe</h3>
+
+            <div class="col-lg-4 col-md-6">
+                <h3>Suscripción al menú diario</h3>
                 <div class="subscribe_form">
-                    <form class="subscribe_form">
-                        <input name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address..."
-                               type="email">
-                        <button type="submit" class="submit">SUBSCRIBE</button>
+                    <form class="subscribe_form" method="POST">
+                        {% csrf_token %}
+                        {{test}}
+                        <button type="submit" class="submit">SUSCRIBIRSE</button>
                         <div class="clearfix"></div>
                     </form>
                 </div>
                 <ul class="list-inline f-social">
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                    </li>
-                    <li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.facebook.com/clubmlvl/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li class="list-inline-item"><a href="https://www.instagram.com/clubmaleville/?hl=es-la" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                 </ul>
             </div>
-
+            <!--
             <div class="col-lg-4 col-md-6">
                 <h3>Contact information</h3>
                 <p class="lead">Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
@@ -94,12 +129,11 @@
                 <p><a href="#"> info@admin.com</a></p>
             </div>
             -->
-            <div class="col-lg-6 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <h3>Horario de atención</h3>
-                <p><span class="text-color">Tue-Wed :</span> 12:PM - 10PM</p>
-                <p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
-                <p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p>
-                <p><span class="text-color">Domingo: </span>Cerrado</p>
+                {% for schedule in schedules %}
+                <p><span class="text-color">{{schedule.days}} :</span> {{schedule.schedule}}</p>
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -108,7 +142,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="company-name">All Rights Reserved. &copy; 2021 <a href="#">Olave WebSystem</a>
+                    <p class="company-name">All Rights Reserved. &copy; 2021 <a href="#">De átomos a bits</a>
                 </div>
             </div>
         </div>

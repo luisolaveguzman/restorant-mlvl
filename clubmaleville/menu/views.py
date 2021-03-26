@@ -7,15 +7,16 @@ from .models import Carta, Category
 
 
 class Carta(TemplateView):
-    cartas = Carta.objects.order_by('id')
-    categorys = Category.objects.order_by('id')
+    carta = Carta.objects.all()
+    categorys = Category.objects.all()
     template_name = "menu/menu.html"
 
     def get_context_data(self, **kwargs):
         context = {}
-        context['plats'] = self.cartas
+        context['plats'] = self.carta
         context['categorys'] = self.categorys
         return context
 
     def get(self, request, *args, **kwargs):
+        print(self.carta)
         return render(request, self.template_name, self.get_context_data())

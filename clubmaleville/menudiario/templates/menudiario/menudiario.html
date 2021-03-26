@@ -15,11 +15,13 @@
                     <div class="pl-3 panel-body">
                         <p class="font-weight-bold text-center">Entradas</p>
                         {% for entrada in entradas %}
+                        {% if entrada.condition == True %}
                         <div class="row font-weight-bold">
                             <div class="col-9" style="color:white">
                                 <p>{{entrada.name}}</p>
                             </div>
                         </div>
+                        {% endif %}
                         {% endfor %}
                     </div>
                     <div class="pl-3">
